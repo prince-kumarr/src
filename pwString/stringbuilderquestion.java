@@ -13,8 +13,14 @@ public class stringbuilderquestion {
 		for(int i =0; i< n; i++) {
 			char ch = sb.charAt(i);
 			int ascii = (int)ch;
-			System.out.println(ch + " --> " + ascii );
+			if(ascii >= 65 && ascii <=90) {
+				ascii += 32;
+			}else if(ascii >= 96 && ascii <=122){
+				ascii = ascii - 32;
+			}
+			ch = (char)ascii;
+			sb.setCharAt(i, ch);
 		}
-		
+		System.out.println(sb);
 	}
 }
